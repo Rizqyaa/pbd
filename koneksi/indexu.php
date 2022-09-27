@@ -19,7 +19,6 @@ $query = $db->query('select * from murid');
         <form class="card-body cardbody-color p-lg-4 " method="get">
   <b class="text-center">D A T A U S E R</b> 
 <div class="d-grid gap-2 col-3">
-  <a href="insertform.html" class="btn btn-outline-primary mb-3">Insert</a>
 </div>
 <div class="cointainer-sm">
 
@@ -30,7 +29,6 @@ $query = $db->query('select * from murid');
         <th>Nama</th>
         <th>Kelas</th>
         <th>Posisi</th>
-        <th>Aksi</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
@@ -46,11 +44,7 @@ $query = $db->query('select * from murid');
 
         <td><?= $data['posisi']?></td>
 
-        <td>
-        <a href="editform.php?nis=<?= $data['nis']; ?>" class="btn btn-outline-light edit"> Edit </a>
-
-        <a href="delete.php?nis=<?= $data['nis']; ?>" class="btn btn-outline-danger delete"> Delete </a>
-        </td>
+        
     </tr>
     <?php endwhile ?>
   </tbody>

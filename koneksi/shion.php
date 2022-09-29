@@ -15,43 +15,43 @@ if($query->rowCount()> 0){
         $_SESSION['username']=$_POST['username'];
         $_SESSION['password']=$_POST['password'];
         $_SESSION['posisi'] = "Ketua Osis";
-        header("location:index.php");
+        header("location:admin.php");
     }
     else if($data['posisi']=="Wakil Ketua Osis"){
         $_SESSION['username']=$_POST['username'];
         $_SESSION['password']=$_POST['password'];
         $_SESSION['posisi'] = "Wakil Ketua Osis";
-        header("location:index.php");
+        header("location:user.php");
     }
      else if($data['posisi']=="Ketua Kelas"){
         $_SESSION['username']=$_POST['username'];
         $_SESSION['password']=$_POST['password'];
         $_SESSION['posisi'] = "Ketua Kelas";
-        header("location:indexu.php");
+        header("location:user.php");
     }
      else if($data['posisi']=="Wakil ketua kelas"){
         $_SESSION['username']=$_POST['username'];
         $_SESSION['password']=$_POST['password'];
         $_SESSION['posisi'] = "Wakil ketua kelas";
-        header("location:indexu.php");
+        header("location:user.php");
     }
     else if($data['posisi']=="Bendahara"){
         $_SESSION['username']=$_POST['username'];
         $_SESSION['password']=$_POST['password'];
         $_SESSION['posisi'] = "Bendahara";
-        header("location:indexu.php");
+        header("location:user.php");
     }
      else if($data['posisi']=="Sekretaris"){
         $_SESSION['username']=$_POST['username'];
         $_SESSION['password']=$_POST['password'];
         $_SESSION['posisi'] = "Sekretaris";
-        header("location:indexu.php");
+        header("location:user.php");
     }
      else if($data['posisi']=="Murid"){
         $_SESSION['username']=$_POST['username'];
         $_SESSION['password']=$_POST['password'];
         $_SESSION['posisi'] = "Murid";
-        header("location:indexu.php");
+        header("location:user.php");
     }
      else{
     header("location:form.html");

@@ -1,13 +1,24 @@
 <?php 
 
-$nis = $_POST ['nis'];
-$nama = $_POST['nama'];
+$nis =htmlentities( $_POST['nis']);
+$nama =htmlentities(trim( $_POST['nama']));
 $kelas = $_POST['kelas'];
-$posisi = $_POST['posisi'];
+$posisi =htmlentities( $_POST['posisi']);
 
-$db = new PDO ('mysql:host=localhost;dbname=mixx', 'root', '');
-$query = $db->query("insert into murid values ('$nis','$nama','$kelas', '$posisi')");
+$pesan_error = "";
 
-if($query){
-    header("Location:index.php");
+if(empty($nama)){
+  $pesan_error .= "Data tidak boleh kosong";
+}
+
+if($pesan_error == ""){ // jika error kosong
+  $database = new PDO("mysql:host=localhost;dbname=mixx",'root','');
+  $query = $database->query("insert into murid values('$nis','$nama','$kelas','$posisi')");
+
+  if($query){
+     header("Location:index.php");
+  }
+
+}else{ // jika ada error
+  header("Location:insertform.php?error=$pesan_error");
 }

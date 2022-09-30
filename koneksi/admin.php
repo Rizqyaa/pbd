@@ -1,12 +1,4 @@
-<?php
-session_start();
-if(isset($_SESSION['username'])){
-    echo "<h1> Halaman Admin </h1>";
-    echo "Welcome, ";
-    echo $_SESSION["username"];
-    echo "<br />";
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +6,39 @@ if(isset($_SESSION['username'])){
    <title>. Admin .</title>
 </head>
 <body>
-<div>
- <a href="berandaa.php" class="btn btn-secondary">
-  Beranda
-</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="berandaa.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="index.php">Data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="admin.php">Halaman Admin</a>
+        </li>
+        <li class="nav-item">
+        <a href="logout.php" class="btn btn-danger" onclick="return confirm('Anda Yakin Akan Logout ?')">Logout</a>      
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+   <?php
+session_start();
+if(isset($_SESSION['username'])){
 
-<a href="index.php" class="btn btn-info">
-   Data
-   </a>
-<a href="logoutad.html" class="btn btn-danger">Logout</a>
-</a>
-</div>
+    echo "Welcome, ";
+    echo $_SESSION["username"];
+    echo "<br />";
+}
+?>
+
 </body>
 </html>

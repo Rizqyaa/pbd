@@ -1,9 +1,9 @@
 <?php
 
-$nis = $_POST['nis'];
-$nama = $_POST['nama'];
+$nis =htmlentities( $_POST['nis']);
+$nama =htmlentities( $_POST['nama']);
 $kelas = $_POST['kelas'];
-$posisi = $_POST['posisi'];
+$posisi =htmlentities( $_POST['posisi']);
 
 
 $database = new PDO('mysql:host=localhost;dbname=mixx', 'root', '');

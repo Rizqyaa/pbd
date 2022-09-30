@@ -6,9 +6,6 @@ $query = $db->query("select * from murid where nis=$nis ");
 $data = $query->fetch();
 
 ?>
-<?php
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,19 +23,40 @@ $data = $query->fetch();
     <form method="POST" action="edit.php" class="row g-3" style="padding-top: 20px; padding-left: 25px;">
         <div class="col-auto">
             <label class="form-label">Nis</label>
-            <input type="text" name="nis" class="form-control" placeholder="nis" value="<?= $data['nis'] ?>">
+            <input type="text" name="nis" class="form-control" placeholder="nis" value="<?= $data['nis'] ?>" required>
         </div>
         <div class="col-auto">
             <label class="form-label">Nama</label>
-            <input type="text" name="nama" class="form-control" placeholder="nama" value="<?= $data['nama'] ?>">
+            <input type="text" name="nama" class="form-control" placeholder="nama" value="<?= $data['nama'] ?>" required>
         </div>
-        <div class="col-auto">
+        <div class="col-5">
             <label for="" class="form-label">Kelas</label>
-            <input type="text" name="kelas" class="form-control" placeholder="kelas" value="<?= $data['kelas'] ?>">
+            <select name="kelas" id="" class="form-select" aria-label="Default select example" value="<?= $data['kelas'] ?>" required>
+                <option value="12 RPL" <?= $data['kelas'] == '1' ? 'selected' : '' ?>>12 RPL</option>
+                <option value="11 RPL" <?= $data['kelas'] == '2' ? 'selected' : '' ?>>11 RPL</option>
+                <option value="10 RPL" <?= $data['kelas'] == '3' ? 'selected' : '' ?>>10 RPL</option>
+                <option value="12 TKJ" <?= $data['kelas'] == '4' ? 'selected' : '' ?>>12 TKJ</option>
+                <option value="11 TKJ" <?= $data['kelas'] == '5' ? 'selected' : '' ?>>11 TKJ</option>
+                <option value="10 TKJ" <?= $data['kelas'] == '6' ? 'selected' : '' ?>>10 TKJ</option>
+                <option value="12 OTKP" <?= $data['kelas'] == '7' ? 'selected' : '' ?>>12 OTKP</option>
+                <option value="11 OTKP" <?= $data['kelas'] == '8' ? 'selected' : '' ?>>11 OTKP</option>
+                <option value="10 OTKP" <?= $data['kelas'] == '9' ? 'selected' : '' ?>>10 OTKP</option>
+                <option value="12 TKR" <?= $data['kelas'] == '10' ? 'selected' : '' ?>>12 TKR</option>
+                <option value="11 TKR" <?= $data['kelas'] == '11' ? 'selected' : '' ?>>11 TKR</option>
+                <option value="10 TKR" <?= $data['kelas'] == '12' ? 'selected' : '' ?>>10 TKR</option>
+            </select>
         </div>
-        <div class="col-auto">
+        <div class="col-5">
             <label class="form-label">posisi</label>
-            <input type="text" name="posisi" class="form-control" placeholder="posisi" value="<?= $data['posisi']?>">
+            <label class="form-label">posisi</label>
+                    <select name="posisi" id="" class="form-select" aria-label="Default select example" value="<?= $data['posisi']?>" required>                      
+                      <option value="Ketua Kelas" <?= $data['posisi'] == '1' ? 'selected' : '' ?>>Ketua Kelas</option>
+                      <option value="Wakil Ketua Kelas" <?= $data['posisi'] == '2' ? 'selected' : '' ?>>Wakil Ketua Kelas</option>
+                      <option value="Sekretaris" <?= $data['posisi'] == '3' ? 'selected' : '' ?>>Sekretaris</option>
+                      <option value="Bendahara" <?= $data['posisi'] == '4' ? 'selected' : '' ?>>Bendahara</option>
+                      <option value="Murid" <?= $data['posisi'] == '5' ? 'selected' : '' ?>>Murid</option>
+                     
+                    </select>
         </div>
         <div class="d-grid gap-2 d-md-block mx-auto" style="padding-top:5px;">
             <button type="submit" value="simpan" class="btn btn-primary mb-3" style="--bs-btn-font-weight: 80;">.   .Update.   .</button>
